@@ -118,3 +118,5 @@ window.onload = function () {
 
 ## 运行插件程序
 其实原理简单，就是开一个本地server去拉取本地的文件数据
+
+![图2](./screenshots/2.png)
