@@ -83,11 +83,13 @@ func createDevServer() {
 		writer.Write(resp_body)
 		fmt.Println(string(resp_body))
 	})
+	fmt.Println("插件启动成功，正在监听请求")
+	http.ListenAndServe(":45452", nil)
 }
 
 /**/
 func main() {
-	createDevServer()
-	fmt.Println("插件启动成功，正在监听请求")
-	http.ListenAndServe(":45452", nil)
+	//开启一个线程
+	go createDevServer()
+	fmt.Scanln()
 }

@@ -18,12 +18,13 @@ function uploadFile()
     }
 
     $file = $_FILES['img'];
+    //var_dump($file);
 //判断文件类型
 //($file["type"] == "image/png" || $file["type"] == "image/jpeg")
 //判断上传文件类型为png或jpg且大小不超过1024000B
     if ($file["size"] < 1024000) {
         //防止文件名重复
-        $filename = time() . $file["name"];
+        $filename = time() . $file["name"] . '.png';
         //转码，把utf-8转成gb2312,返回转换后的字符串， 或者在失败时返回 FALSE。
         $filename = iconv("UTF-8", "gb2312", $filename);
         //检查文件或目录是否存在
