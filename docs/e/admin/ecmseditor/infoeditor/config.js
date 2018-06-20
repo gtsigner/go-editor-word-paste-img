@@ -155,6 +155,10 @@ function uplaodImage() {
         var count = b.count();
         for (var i = 0; i < count; i++) {
             var src = b.getItem(i).$.src;//获取img的src
+            //还需要判断是否是file协议
+            if (/^file:\/\//.test(src) === false) {
+                continue;
+            }
             src = src.replace(/file:\/\/\//g, '');
             var url = uploadSer + '?server=' + serv + '&file=' + src;
             (function (url, ins) {

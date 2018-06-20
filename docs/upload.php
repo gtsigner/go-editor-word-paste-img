@@ -11,10 +11,10 @@ define('URL_PATH', '/photo/upload/');
 function uploadFile()
 {
     if ($_FILES["img"]["error"] > 0) {
-        return json_encode([
+        return json_encode(array(
             'code' => 0,
             'msg' => '上传文件失败'
-        ]);
+        ));
     }
 
     $file = $_FILES['img'];
